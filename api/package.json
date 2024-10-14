@@ -17,7 +17,14 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./apps/api/test/jest-e2e.json"
+    "test:e2e": "jest --config ./apps/api/test/jest-e2e.json",
+    "start:auth": "nest start --watch apps/auth",
+    "start:product": "nest start --watch apps/product",
+    "start:cart": "nest start --watch apps/cart",
+    "start:order": "nest start --watch apps/order",
+    "start:payment": "nest start --watch apps/payment",
+    "start:wishlist": "nest start --watch apps/wishlist",
+    "start:all": "concurrently \"npm run start:auth\" \"npm run start:product\" \"npm run start:cart\" \"npm run start:order\" \"npm run start:payment\" \"npm run start:wishlist\""
   },
   "dependencies": {
     "@nestjs/common": "^10.4.4",
